@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Repasando JavaScript - Vaidación de formularios</title>
+        <meta charset="UTF-8">
+        <meta name="description" content="Repasando como validar formularios con JavaScript" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="css/estilos.css" />
+        <script src="js/validaciones.js" ></script>
+    </head>
+    <body>
+        <form id="contacto-frm" name="contacto-frm" action="get">
+            <fieldset>
+                <legend>Contacto</legend>
+                <label for="nombre" >Nombre: </label>
+                <input type="text" id="nombre" name="nombre_txt" class="cambio" />
+                <br/><br/>
+                
+                <label for="edad" >Edad: </label>
+                <input type="text" id="edad" name="edad_txt" class="cambio" />
+                <br/><br/>
+                
+                <label for="email" >E-mail:  </label>
+                <input type="text" id="email" name="email_txt" class="cambio" />
+                <br/><br/>
+                
+                <label for="sexo" >Sexo: </label>
+                <input type="radio" id="M" name="sexo_rdo" />
+                <label for="M" >Masculino: </label>
+                <input type="radio" id="F" name="sexo_rdo" />
+                <label for="F" >Femenino: </label>
+                <br/><br/>
+                
+                <label for="asunto" >Asunto: </label>
+                <input type="text" id="asunto" name="asunto_txt" class="cambio" />
+                <br/><br/>
+                
+                <label for="comentarios" >Comentarios: </label>
+                <br/>
+                <textarea name="comentarios_txa" id="comentarios" cols="50" rows="5" class="cambio">                    
+                </textarea>
+                <br/><br/>
+                
+                <!--<input type="submit" id="enviar" class="cambio" name="enviar_btn" value="Enviar"/>
+                <!-- Con el input type="reset" se limpian todos los campos del formulario automáticamente 
+                <input type="reset" id="limpiar" class="cambio" name="limpiar_btn" value="Limpiar"/> -->
+                
+                <input type="button" id="enviar" class="cambio" name="enviar_btn" value="Enviar"/>
+                <input type="button" id="limpiar" class="cambio" name="limpiar_btn" value="Limpiar"/>
+            </fieldset>            
+        </form>
+    </body>
+</html>
