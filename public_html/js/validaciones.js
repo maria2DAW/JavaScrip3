@@ -1,7 +1,73 @@
 function validarForm()
 {
-    alert("Validando");
-    document.contacto_frm.submit();
+    var verificar = true;
+    var expRegNombre = /^[a-zA-ZÑñÁáÉéÍíÓóÚúÜü\s]+$/;
+    var expRegEmail = /^[_a-z0-9-]+(.[_a-z0-9-]+)*@[a-z0-9-]+(.[a-z0-9-]+)*(.[a-z]{2,4})$/;
+    
+    var formulario = document.getElementById("contacto_frm");
+    var nombre = document.getElementById("nombre");
+    var edad = document.getElementById("edad");
+    var email = document.getElementById("email");
+    var masculino = document.getElementById("M");
+    var femenino = document.getElementById("F");
+    var asunto = document.getElementById("asunto");
+    var comentarios = document.getElementById("comentarios");
+    
+    if(!nombre.value)
+    {
+        alert("El campo Nombre es requerido.");
+        nombre.focus();
+        verificar = false;
+    }
+    
+    else if(!expRegNombre.exec(nombre.value))
+    {
+        alert("El campo Nombre sólo acepta letras y espacios en blanco.");
+        nombre.focus();
+        verificar = false;
+    }
+    
+    else if(!edad.value)
+    {
+        alert("El campo Edad es requerido.");
+        edad.focus();
+        verificar = false;
+    }
+    
+    else if(!email.value)
+    {
+        alert("El campo E-mail es requerido.");
+        email.focus();
+        verificar = false;
+    }
+    
+    else if(!expRegEmail.exec(email.value))
+    {
+        alert("El campo E-mail no es válido.");
+        nombre.focus();
+        verificar = false;
+    }
+    
+    else if(!asunto.value)
+    {
+        alert("El campo Asunto es requerido.");
+        asunto.focus();
+        verificar = false;
+    }
+    
+    else if(!comentarios.value)
+    {
+        alert("El campo Comentarios es requerido.");
+        comentarios.focus();
+        verificar = false;
+    }
+    
+    if(verificar)
+    {
+        alert("Formulario enviado");
+        document.contacto_frm.submit();
+    }
+    
 }
 
 function limpiarForm()
