@@ -34,6 +34,20 @@ function validarForm()
         verificar = false;
     }
     
+    else if(isNaN(edad.value)) //isNotaNumber
+    {
+        alert("El campo Edad sólo acepta números.");
+        edad.focus();
+        verificar = false;
+    }
+    
+    else if(edad.value < 18 || edad.value > 60)
+    {
+        alert("Debes estar en un rango de edad entre 18 y 60 años.");
+        edad.focus();
+        verificar = false;
+    }
+    
     else if(!email.value)
     {
         alert("El campo E-mail es requerido.");
