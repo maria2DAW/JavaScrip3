@@ -48,6 +48,13 @@ function validarForm()
         verificar = false;
     }
     
+    else if(!masculino.checked && !femenino.checked)
+    {
+        alert("El campo Sexo es requerido.");
+        femenino.focus();
+        verificar = false;
+    }
+    
     else if(!email.value)
     {
         alert("El campo E-mail es requerido.");
@@ -72,6 +79,15 @@ function validarForm()
     else if(!comentarios.value)
     {
         alert("El campo Comentarios es requerido.");
+        comentarios.focus();
+        verificar = false;
+    }
+    
+    else if(comentarios.value.length > 255) //Se verifica que sea menor de 255 caracteres debido a que en 
+                                    //las bases de datos esta es la cantidad máxima que tiene un varchar.
+                                    //Si es mayor a esta cantidad debería ser un text o un long char
+    {
+        alert("El campo Comentarios no puede tener más de 255 caracteres.");
         comentarios.focus();
         verificar = false;
     }
